@@ -21,6 +21,7 @@
 
 1. Run `kubectl describe pod [POD NAME] | grep Node` to get which node that K8S pod runs in.
 1. Run `kubectl-exec`.
+1. To find the PID of the container process, run `docker ps -q | xargs docker inspect --format '{{.State.Pid}}, {{.Name}}'  | grep process-name`.
 1. Once insider alpine container, run `./dlv attach [pid]`.
 
 See [Github issue.](https://github.com/MicrosoftDocs/azure-docs/issues/79825)
